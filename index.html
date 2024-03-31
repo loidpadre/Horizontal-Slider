@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="script.js" defer></script>
+    <title>Horizoltal Slider</title>
+</head>
+<body>
+
+    <div class="galeryGap">
+        <img src="images/back.png" id="back" >
+        <div class="galery">
+            <div>
+                <span><img src="images/image-1.png"></span>
+                <span><img src="images/image-2.png"></span>
+                <span><img src="images/image-3.png"></span>
+            </div>
+            <div>
+                <span><img src="images/image-4.png"></span>
+                <span><img src="images/image-5.png"></span>
+                <span><img src="images/image-6.png"></span>
+            </div>
+        </div>
+        <img src="images/next.png" id="next" >
+    </div>
+    
+
+    <script>
+        const constainerscrool = document.querySelector(".galery")
+        const back = document.getElementById("back")
+        const next = document.getElementById("next")
+
+        constainerscrool.addEventListener("wheel", (e) =>{
+            e.preventDefault()
+            constainerscrool.scrollLeft += e.deltaY
+            constainerscrool.style.scrollBehavior = "auto"
+        })
+
+        next.addEventListener("click", ()=>{
+            constainerscrool.style.scrollBehavior = "smooth"
+            constainerscrool.scrollLeft += 900
+        })
+        back.addEventListener("click", ()=>{
+            constainerscrool.style.scrollBehavior = "smooth"
+            constainerscrool.scrollLeft -= 900
+        })
+    </script>
+    
+</body>
+</html>

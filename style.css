@@ -1,0 +1,48 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+body{
+    background-color: #191919;
+}
+.galery{
+    width: 900px;
+    display: flex;
+    overflow-x: scroll;
+    
+}
+.galery div{
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 20px;
+    flex: none;
+}
+.galery div img{
+    width:100%;
+    filter: grayscale(100%);
+    transition:  transform 0.5s;
+}
+.galery::-webkit-scrollbar{
+    display: none;
+}
+
+.galeryGap{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10% auto;
+    gap: 20px;
+    
+}
+#back,#next{
+    width: 50px;
+    cursor: pointer;
+}
+.galery div img:hover{
+    filter: grayscale(0);
+    transform: scale(0.9);
+    cursor: pointer;
+}
